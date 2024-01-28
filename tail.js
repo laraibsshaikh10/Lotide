@@ -1,4 +1,4 @@
-//array will be sliced at index 1 to get the tail 
+//array will be sliced at index 1 to get the tail
 const tail = function(array) {
   return array.slice(1);
 };
@@ -14,19 +14,19 @@ const assertEqual = function(actual, expected) {
 
 
 
-// Test Case: Check the original array 
+// Test Case: Check the original array
 const words = ["Yo Yo", "Lighthouse", "Labs"];
 tail(words); // no need to capture the return value since we are not checking it
 assertEqual(words.length, 3); // original array should still have 3 elements!
 
-const oneWord = ["Lighthouse"];
-tail(oneWord); // no need to capture the return value since we are not checking it
-assertEqual(oneWord.length, 1); // original array should still have 3 elements!
+const oneWord = tail(["Lighthouse"]);
+assertEqual(oneWord.length, 0);
+assertEqual(oneWord[0], undefined);
 
-// Test Case: Check the original array 
-const emptyArray = [];
-tail(emptyArray); // no need to capture the return value since we are not checking it
-assertEqual(emptyArray.length, 0); // original array should still have 3 elements!
+// Test Case: Check the original array
+const emptyArray = tail([]);
+assertEqual(emptyArray.length, 0);
+assertEqual(emptyArray[0], undefined);
 
 //Test case
 const result = tail(["Hello", "Lighthouse", "Labs"]);
