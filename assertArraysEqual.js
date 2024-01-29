@@ -2,9 +2,9 @@
 
 const assertArraysEqual = function(array1, array2) {
   if (eqArrays(array1, array2)) {
-    console.log(`✅✅✅ Assertion Passed: ${array1} === ${array2}`);
+    console.log(`✅✅✅ Assertion Passed: Arrays are equal`);
   } else {
-    console.log(`⛔⛔⛔ Assertion Failed: ${array1} !== ${array2}`);
+    console.log(`⛔⛔⛔ Assertion Failed: Arrays are not equal`);
   }
 }
 
@@ -26,6 +26,21 @@ const eqArrays = function(array1, array2) {
 };
 
 // Test case:\
-let array1 = [1, 2, 3];
-let array2 = [1, 2, 3];
-assertArraysEqual(eqArrays(array1, array2), true);
+// let array1 = [1, 2, 3];
+// let array2 = [1, 2, 3];
+// assertArraysEqual(eqArrays(array1, array2), true);
+
+// A positive test case
+assertArraysEqual([1, 2, 3], [1, 2, 3]); // Should print a message that the arrays are equal
+
+// A negative test case
+assertArraysEqual([1, 2, 3], [3, 2, 1]); // Should print a message that the arrays are not equal
+
+// Another negative test case (different lengths)
+assertArraysEqual([1, 2], [1, 2, 3]); // Should print a message that the arrays are not equal
+
+// An edge case (nested arrays)
+assertArraysEqual([[1], [2]], [[1], [2]]); // Should print a message based on how your eqArrays handles nested arrays
+
+// Another edge case (empty arrays)
+assertArraysEqual([], []); // Should print a message that the arrays are equal
