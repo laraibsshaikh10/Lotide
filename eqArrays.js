@@ -3,17 +3,21 @@
 
 const eqArrays = function(array1, array2) {
   //check if both arrays have the same length
-  if (array1.length === array2.length) {
+  if (array1.length !== array2.length) {
     //checks if both arrays have the same elements
-    for (let i = 0; i < array1.length; i++) {
-      array1[i] === array2[i];
-     }
-    return true;
-  } else {
     return false;
   }
-}
+  for (let i = 0; i < array1.length; i++) {
+    if (array1[i] !== array2[i]) {
 
+      return false;
+
+    }
+  }
+  return true;
+};
+    
+    
 // FUNCTION IMPLEMENTATION
 const assertEqual = function(actual, expected) {
   if (actual === expected) {
@@ -25,5 +29,4 @@ const assertEqual = function(actual, expected) {
 
 // Test case:
 assertEqual(eqArrays([1, 2, 3], [1, 2, 3]), true); // => should PASS
-assertEqual(eqArrays([1, 5, 7], [1, 2, 3]), true); // should fail
-assertEqual(eqArrays(['Hello', 'World'], [1, 2, 3]), true); //should fail
+assertEqual(eqArrays([5, 6, 7], [5, 5, 7]), true); // should fail
