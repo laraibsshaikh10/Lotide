@@ -6,7 +6,7 @@ const assertArraysEqual = function(array1, array2) {
   } else {
     console.log(`⛔⛔⛔ Assertion Failed: Arrays are not equal`);
   }
-}
+};
 
 
 const eqArrays = function(array1, array2) {
