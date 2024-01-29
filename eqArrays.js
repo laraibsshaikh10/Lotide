@@ -29,4 +29,4 @@ const assertEqual = function(actual, expected) {
 
 // Test case:
 assertEqual(eqArrays([1, 2, 3], [1, 2, 3]), true); // => should PASS
-assertEqual(eqArrays([5, 6, 7], [5, 5, 7]), true); // should fail
+assertEqual(eqArrays([5, 6, 7], [5, 5, 7]), false); // should fail
