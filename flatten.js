@@ -9,12 +9,17 @@ const flatten = function(nestedArray) {
     // use Array.isArray to check whether each index within the nested array is an array or not
     if (Array.isArray(nestedArray[i])) {
       // if its an array within the array, use the recursive call to flatten the array within the array and then pushes those elements into the merged array
-      mergedArray.push(...flatten(nestedArray[i]));
+      // mergedArray.push(...flatten(nestedArray[i]));
+
+      //to flatten and spread only one level of nesting as per the program requirement
+      mergedArray.push(...nestedArray[i]);
+
       // if the index is not an array, it simply just pushes that index into the merged array
     } else {
       mergedArray.push(nestedArray[i]);
     }
   }
+  
   return mergedArray;
 };
 
@@ -45,8 +50,7 @@ const eqArrays = function(array1, array2) {
 };
 
 //TEST CASE:
-const nested = [1, 2, [5, 6, 7], 3, [8]];
-//shows the final merged array
-console.log(flatten(nested));
+assertArraysEqual([1, 2], [1, 2]);
 //uses the assertArrayEqual function to check if its the same or not
-assertArraysEqual(flatten(nested), [1, 2, 5, 6, 7, 3, 8]);
+flatten([1, 2, 3, [4, 5], 6, [7]]);
+assertArraysEqual(flatten([1, 2, 3, [4, 5], 6, [7]]), [1, 2, 3, 4, 5, 6, 7]);
