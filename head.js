@@ -3,9 +3,9 @@
   const head = function(array){
     if (array.length !== 0) {
       return array[0];
-    } else {
-      return undefined;
-    }
+     } //else { not need to add this as this will automatically happen
+    //   return undefined;
+    // }
   };
 
 
