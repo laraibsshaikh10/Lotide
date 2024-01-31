@@ -8,6 +8,22 @@ const assertEqual = function(actual, expected) {
   }
 };
 
+const eqArrays = function(array1, array2) {
+  //check if both arrays have the same length
+  if (array1.length !== array2.length) {
+    //checks if both arrays have the same elements
+    return false;
+  }
+  for (let i = 0; i < array1.length; i++) {
+    if (array1[i] !== array2[i]) {
+
+      return false;
+
+    }
+  }
+  return true;
+};
+    
 
 //Implement the definition for function eqObjects which will take in two objects and returns true or false, based on a perfect match.
 
@@ -32,9 +48,19 @@ const eqObjects = function(object1, object2) {
     //values of each object assigned to its corresponding keys
     const value1 = object1[key];
     const value2 = object2[key];
-    //if values corresponding to respective keys arent the same
-    if (value1 !== value2) {
-      return false;
+    
+    //To check if the values corresponding to respective keys arent the same
+    //to check if values are array
+    if (Array.isArray(value1) && Array.isArray(value2)) {
+      // if the eqArrays function returns false
+      if (!eqArrays(value1, value2)) {
+        return false;
+      }
+    // if the values are not arrays and are not the same
+    } else {
+      if (value1 !== value2) {
+        return false;
+      }
     }
   }
   return true;
@@ -42,13 +68,8 @@ const eqObjects = function(object1, object2) {
 
 
 //Test Cases:
-// const shirtObject = { color: "red", size: "medium" };
-// const anotherShirtObject= { size: "medium", color: "red" };
-// assertEqual(eqObjects(shirtObject , anotherShirtObject), undefined); // => true
 
-// const longSleeveShirtObject= { size: "medium", color: "red", sleeveLength: "long" };
-// assertEqual(eqObjects(shirtObject , longSleeveShirtObject), undefined); // => false
-
+//non-array values in the object
 const shirtObject = { color: "red", size: "medium" };
 const anotherShirtObject = { size: "medium", color: "red" };
 
@@ -61,5 +82,17 @@ const longSleeveShirtObject = { size: "medium", color: "red", sleeveLength: "lon
 eqObjects(shirtObject , longSleeveShirtObject); // => false
 assertEqual(eqObjects(shirtObject , longSleeveShirtObject), false);
 
+//to check values as arrays
+const multiColorShirtObject = { colors: ["red", "blue"], size: "medium" };
+const anotherMultiColorShirtObject = { size: "medium", colors: ["red", "blue"] };
+eqObjects(multiColorShirtObject  , anotherMultiColorShirtObject); // => true
+
+const longSleeveMultiColorShirtObject = { size: "medium", colors: ["red", "blue"], sleeveLength: "long" };
+eqObjects(multiColorShirtObject  , longSleeveMultiColorShirtObject); // => false
+assertEqual(eqObjects(multiColorShirtObject , longSleeveMultiColorShirtObject), false);
+
+
+//logging the actual equalobjects functions results
 console.log(eqObjects(shirtObject, anotherShirtObject));
 console.log(eqObjects(shirtObject, longSleeveShirtObject));
+console.log(eqObjects(multiColorShirtObject, anotherMultiColorShirtObject));
