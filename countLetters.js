@@ -35,7 +35,7 @@ console.log(countLetters("lighthouse in the house"));
 //to use the assertEqual function
 const string = "lighthouse in the house";
 
-const result = countLetters(string, { l: 1, i: 2, g: 1, h: 4, t: 2, o: 2, u: 2, s: 2, e: 3, n: 1 });
+const result = countLetters(string);
 
 assertEqual(result["l"], 1);
 assertEqual(result["i"], 2);
