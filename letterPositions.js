@@ -47,11 +47,13 @@ const letterPositions = function(sentenceString) {
 };
 
 console.log(letterPositions("hello"));
+const result = letterPositions("hello");
+//result.letter to access the letter from the object
+assertArraysEqual(result.h, [0]);
+assertArraysEqual(result.e, [1]);
+assertArraysEqual(result.l, [2, 3]);
+assertArraysEqual(result.o, [4]);
 
-//letterPositions("hello").letter to access the letter from the object
-assertArraysEqual(letterPositions("hello").h, [0]);
-assertArraysEqual(letterPositions("hello").e, [1]);
-assertArraysEqual(letterPositions("hello").l, [2, 3]);
-assertArraysEqual(letterPositions("hello").o, [4]);
+
 
 
