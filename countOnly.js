@@ -22,7 +22,7 @@ const countOnly = function(allItems, itemsToCount) {
 
   for (const item of allItems) {
     
-    // inside the loop, 
+    // inside the loop,
     // increment the counter for each item:
     // set a property with that string key to:
     // the value that was already there (or zero if nothing there) with 1 added to it.
@@ -31,7 +31,7 @@ const countOnly = function(allItems, itemsToCount) {
     //check if item of allitems is present in the itemsToCount
     // then checks if results object already has that item present, if it is then it adds 1
     // if results object does not already have that item present, then it counts it as 1
-    if (itemsToCount[item]) { 
+    if (itemsToCount[item]) {
       if (results[item]) {
         results[item] += 1;
       } else {
@@ -41,7 +41,7 @@ const countOnly = function(allItems, itemsToCount) {
   }
 
   return results;
-}
+};
 
 
 
