@@ -69,12 +69,10 @@ const assertObjectsEqual = function(actual, expected) {
   }
 };
 
-//TEST CASE:
+//TEST CASES:
 
-// let obj1 = {a: 1, b: 2, c: 3};
-// let obj2 = {a: 1, b: 2, c: 3};
-// console.log(assertObjectsEqual(eqObjects(obj1, obj2), true));
+
 assertObjectsEqual({a: 1, b: 2, c: 3}, {a: 1, b: 2, c: 3});
 assertObjectsEqual({a: 1, b: ["Hello", "World"], c: [5, 6, 7]}, {a: 1, b: ["Hello", "World"], c: [5, 6, 7]});
-assertObjectsEqual({Name: "Harry Potter", Age: 24, School: "Lighthouse Labs"}, {Name: "Harry Potter", Age: 24, School: "Lighthouse Labs"});
+assertObjectsEqual({Name: "Harry Potter", Age: 24, School: "LighthouseLabs"}, {Name: "Harry Potter", Age: 24, School: "Lighthouse Labs"});
 
