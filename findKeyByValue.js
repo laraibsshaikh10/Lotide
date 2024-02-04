@@ -21,7 +21,8 @@ const findKeyByValue = function(object, value) {
     }
   }
   //once the loop finishes and the value doesnt match any values within the object, it returns undefined
-  return undefined;
+  //dont actually need the line below as JS automatically returns undefined if a value isnt found
+  // return undefined;
 };
 
 
