@@ -7,13 +7,16 @@ const eqArrays = function(array1, array2) {
     //checks if both arrays have the same elements
     return false;
   }
+  //to iterate through each element in the arrays
   for (let i = 0; i < array1.length; i++) {
+    //return false if elements are not equal at the same index in each array
     if (array1[i] !== array2[i]) {
-
       return false;
 
     }
   }
+
+  //return true if both arrays are equal
   return true;
 };
     
