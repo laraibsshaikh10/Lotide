@@ -15,7 +15,6 @@ const assertObjectsEqual = require("./assertObjectsEqual");
 const eqObjects = require("./eqObjects");
 const flatten = require('./flatten');
 const letterPositions = require('./letterPositions');
-const map = require('./map');
 const takeUntil = require('./takeUntil');
 const without = require('./without');
 
@@ -37,7 +36,6 @@ module.exports = {
   eqObjects: eqObjects,
   flatten: flatten,
   letterPositions: letterPositions,
-  map: map,
   takeUntil: takeUntil,
   without: without
 
