@@ -1,24 +1,3 @@
-// console.assert
-
-
-// FUNCTION IMPLEMENTATION
-// const sum = function(a, b) {
-//   return a + b;
-// }
-
-// // TEST CODE
-// console.assert(sum(1, 2) === 3);
-// console.assert(sum(1, 20) === 3); // bad / incorrect assertion, and we see it fail!
-
-// FUNCTION IMPLEMENTATION
-// const sumBuggy = function(a, b) {
-//   return a * b;
-// }
-
-// // TEST CODE
-// console.assert(sumBuggy(1, 2) === 3); // fails, because bug!
-
-
 // FUNCTION IMPLEMENTATION
 const assertEqual = function(actual, expected) {
   if (actual === expected) {
@@ -28,10 +7,7 @@ const assertEqual = function(actual, expected) {
   }
 };
 
-// TEST CODE
-assertEqual("Lighthouse Labs", "Bootcamp");
-assertEqual(1, 1);
-assertEqual("Laraib", "Shaikh");
-assertEqual("1", 1);
-assertEqual("Bootcamp", "Bootcamp");
-assertEqual(4, 1);
+
+
+//Export the function using module.exports.
+module.exports = assertEqual;
