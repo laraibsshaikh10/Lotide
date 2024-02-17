@@ -24,4 +24,16 @@ describe("#middle", () => {
     assert.deepEqual(middle([1, 2, 3, 4, 5, 6]), [3, 4]);
   });
 
+  //single element array
+  it("returns [] for [2]", () => {
+    assert.deepEqual(middle([2]), []);
+  });
+
+  //empty array
+  it("returns [] for []", () => {
+    assert.deepEqual(middle([]), []);
+  });
+
+
+
 });
